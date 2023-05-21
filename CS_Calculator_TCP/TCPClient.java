@@ -21,8 +21,10 @@ public class TCPClient {
             String message, response;
             do {
                 System.out.println("------------------------------------------------");
+                System.out.println("\033[32m" + "\033[1m");
                 System.out.println("Inter your mathematical expression like 23 + 43");
                 System.out.println("Don't forget to use a space to separate each term, i.e numbers and operaor should be separated with space.");
+                System.out.println("\033[0m");
                 System.out.println("------------------------------------------------");
                 System.out.print("Question: ");
                 message = br.readLine();

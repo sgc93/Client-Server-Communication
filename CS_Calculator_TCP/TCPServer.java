@@ -25,6 +25,7 @@ public class TCPServer {
                 do {
                     message = in.readLine();
                     if(message.equals("stop")){
+                        System.out.println("server closed!");
                         break;
                     }
                     String[] splited = message.split(" ");
@@ -49,14 +50,14 @@ public class TCPServer {
                             response = "\033[31m" + "\033[1m" + "UNclear operator";
                             break;
                         }
-                        out.println("Answer: " + response);
+                        out.println("\033[33m" + "\033[1m" + "Answer: " + response);
                     } catch(Exception e){
                         out.println("\033[31m" + "\033[1m" + "You have sent incorrect expression!");
                     }
                 } while(true);
-                // in.close();
-                // out.close();
-                // con.close();
+                in.close();
+                out.close();
+                con.close();
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
